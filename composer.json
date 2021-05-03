@@ -10,8 +10,10 @@
         "doctrine/doctrine-bundle": "^2.3",
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.8",
+        "easycorp/easyadmin-bundle": "^3.2",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^5.1",
+        "symfony/apache-pack": "^1.0",
         "symfony/asset": "4.4.*",
         "symfony/console": "4.4.*",
         "symfony/dotenv": "4.4.*",
@@ -91,5 +93,7 @@
             "allow-contrib": false,
             "require": "4.4.*"
         }
-    }
+    },
+    "name": "garageduweb/website-skeleton-4-4",
+    "description": "First Symfony 4.4.22 project based on website-skeleton"
 }
