@@ -4,35 +4,98 @@
     <meta charset="UTF-8">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
-         {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
-<body>
-    {% if app.user %}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{ path('home') }}">Mon Application</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-
-                </ul>
-                <span class="justify-content-end">Bonjour {{ app.user.firstname }} {{ app.user.name }}</span>
-                <ul class="navbar-nav justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    {% endif %}
-
-    <div class="c-app flex-row align-items-center">
-        {% block body %}{% endblock %}
+<body class="c-app">
+{% if app.user %}
+    <div class="c-sidebar">
+        <!-- Sidebar content here -->
     </div>
+{% endif %}
+<div class="c-wrapper">
+    {% if app.user %}
+        <header class="c-header">
+            <!-- Header content here -->
+        </header>
+    {% endif %}
+    <div class="c-body">
+        <main class="c-main">
+            {% block body %}{% endblock %}
+        </main>
+    </div>
+    {% if app.user %}
+        <footer class="c-footer">
+            <!-- Footer content here -->
+        </footer>
+    {% endif %}
+</div>
+
+{#    <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">#}
+{#        <ul class="c-sidebar-nav">#}
+{#            <li class="c-sidebar-nav-item">#}
+{#                <a class="c-sidebar-nav-link" href="/">#}
+{#                    <i class="c-sidebar-nav-icon cil-speedometer"></i>Tableau de bord<span class="badge badge-info">NEW</span></a>#}
+{#            </li>#}
+{#            <li class="c-sidebar-nav-title">2021</li>#}
+{#            <li class="c-sidebar-nav-item">#}
+{#                <a class="c-sidebar-nav-link" href="/">#}
+{#                    <i class="c-sidebar-nav-icon cil-bookmark"></i>Consulter</a>#}
+{#            </li>#}
+{#        </ul>#}
+{#        <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent"#}
+{#                data-class="c-sidebar-minimized"></button>#}
+{#    </div>#}
+{#    <div class="c-wrapper c-fixed-components">#}
+{#        <header class="c-header c-header-light c-header-fixed c-header-with-subheader">#}
+{#            <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar"#}
+{#                    data-class="c-sidebar-show">#}
+{#                <i class="cil-menu"></i>#}
+{#            </button>#}
+{#            <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar"#}
+{#                    data-class="c-sidebar-lg-show" responsive="true">#}
+{#                <i class="cil-menu"></i>#}
+{#            </button>#}
+{#            <ul class="c-header-nav ml-auto mr-4">#}
+{#                <li class="c-header-nav-item d-md-down-none mx-2">#}
+{#                    <span class="justify-content-end">Bonjour {{ app.user.firstname }} {{ app.user.name }}</span>#}
+{#                </li>#}
+{#                <li class="c-header-nav-item d-md-down-none mx-2">#}
+{#                    <a class="c-header-nav-link" href="{{ path('app_logout') }}">#}
+{#                        <i class="c-icon mr-2 cil-account-logout"></i> Se déconnecter</a>#}
+{#                </li>#}
+{#            </ul>#}
+{#            <div class="c-subheader px-3">#}
+{#                <!-- Breadcrumb-->#}
+{#                <ol class="breadcrumb border-0 m-0">#}
+{#                    <li class="breadcrumb-item">Home</li>#}
+{#                    <li class="breadcrumb-item"><a href="#">Admin</a></li>#}
+{#                    <li class="breadcrumb-item active">Dashboard</li>#}
+{#                    <!-- Breadcrumb Menu-->#}
+{#                </ol>#}
+{#            </div>#}
+{#        </header>#}
+{#    </div>#}
+{#    <nav class="navbar navbar-expand-lg navbar-light bg-light">#}
+{#        <a class="navbar-brand" href="{{ path('home') }}">Mon Application</a>#}
+{#        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"#}
+{#                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">#}
+{#            <span class="navbar-toggler-icon"></span>#}
+{#        </button>#}
+
+{#        <div class="collapse navbar-collapse" id="navbarSupportedContent">#}
+{#            <ul class="navbar-nav mr-auto">#}
+
+{#            </ul>#}
+{#            <span class="justify-content-end">Bonjour {{ app.user.firstname }} {{ app.user.name }}</span>#}
+{#            <ul class="navbar-nav justify-content-end">#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>#}
+{#                </li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </nav>#}
+
 {% block javascripts %}
     {{ encore_entry_link_tags('vendor') }}
     {{ encore_entry_script_tags('app') }}

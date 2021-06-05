@@ -4,47 +4,48 @@
 
 {% block body %}
     <div class="container">
-        <form action="{{ path('app_login') }}" method="post">
-            {% if error %}
-                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-            {% endif %}
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-5">
-                        <div class="card-group">
-                            <div class="card p-4">
-                                <div class="card-body">
-                                    <h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1>
-
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend"><span class="input-group-text">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-8 col-lg-6 col">
+                <form action="{{ path('app_login') }}" method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                    <div class="card-group">
+                        <div class="card p-4">
+                            <div class="card-body">
+                                <h1 class="h3 mb-3 font-weight-normal text-center">Connectez-vous</h1>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend"><span class="input-group-text">
                                             <i class="cil-user"></i>
                                             </span></div>
-                                        <input class="form-control" name="email" value="{{ last_username }}" type="text" placeholder="Adresse email">
-                                    </div>
-                                    <div class="input-group mb-4">
-                                        <div class="input-group-prepend"><span class="input-group-text">
+                                    <input class="form-control" name="email" value="{{ last_username }}" type="text"
+                                           placeholder="Email">
+                                </div>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend"><span class="input-group-text">
                                         <i class="cil-lock-locked"></i>
                                             </span></div>
-                                        <input class="form-control" name="password" type="password" placeholder="Mot de passe">
+                                    <input class="form-control" name="password" type="password"
+                                           placeholder="Mot de passe">
+                                </div>
+                                <input type="hidden" name="_csrf_token"
+                                       value="{{ csrf_token('authenticate') }}"
+                                >
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button class="btn btn-primary px-4" type="submit">Se connecter</button>
                                     </div>
-                                    <input type="hidden" name="_csrf_token"
-                                           value="{{ csrf_token('authenticate') }}"
-                                    >
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <button class="btn btn-primary px-4" type="button">Se connecter</button>
-                                        </div>
-                                        <div class="col-6 text-right">
-                                            <button class="btn btn-link px-0" type="button">Mot de passe oublié ?</button>
-                                        </div>
+                                    <div class="col-6 text-right">
+                                        <a class="btn btn-link px-0"
+                                           href="{{ path('app_forgot_password_request') }}">Mot de passe oublié
+                                            ?</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 {% endblock %}

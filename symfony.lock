@@ -148,6 +148,9 @@
     "psr/container": {
         "version": "1.1.1"
     },
+    "psr/event-dispatcher": {
+        "version": "1.0.0"
+    },
     "psr/link": {
         "version": "1.0.0"
     },
@@ -204,9 +207,6 @@
         ]
     },
     "symfony/css-selector": {
-        "version": "v4.4.22"
-    },
-    "symfony/debug": {
         "version": "v4.4.22"
     },
     "symfony/debug-bundle": {
@@ -305,9 +305,6 @@
     "symfony/http-kernel": {
         "version": "v4.4.22"
     },
-    "symfony/inflector": {
-        "version": "v4.4.21"
-    },
     "symfony/intl": {
         "version": "v4.4.22"
     },
@@ -359,6 +356,9 @@
     "symfony/orm-pack": {
         "version": "v2.1.0"
     },
+    "symfony/password-hasher": {
+        "version": "v5.3.0"
+    },
     "symfony/phpunit-bridge": {
         "version": "5.1",
         "recipe": {
@@ -397,6 +397,9 @@
     },
     "symfony/polyfill-php80": {
         "version": "v1.22.1"
+    },
+    "symfony/polyfill-php81": {
+        "version": "v1.23.0"
     },
     "symfony/polyfill-uuid": {
         "version": "v1.22.1"
@@ -571,6 +574,18 @@
     },
     "symfony/yaml": {
         "version": "v4.4.22"
+    },
+    "symfonycasts/reset-password-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "97c1627c0384534997ae1047b93be517ca16de43"
+        },
+        "files": [
+            "config/packages/reset_password.yaml"
+        ]
     },
     "twig/extra-bundle": {
         "version": "v3.3.0"
