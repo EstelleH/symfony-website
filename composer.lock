@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b17684dbd64bb13dffb9f7bd075626e3",
+    "content-hash": "8789fac16e2ab0b171fcfc2c6951068d",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -81,27 +81,22 @@
         },
         {
             "name": "coreui/coreui",
-            "version": "v4.0.0",
+            "version": "v4.0.0-rc.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/coreui/coreui.git",
-                "reference": "8a628b943cf31ca0a002c08af661a95772480225"
+                "reference": "0ade4fdc917968a6d63883282596dae92b7f84a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coreui/coreui/zipball/8a628b943cf31ca0a002c08af661a95772480225",
-                "reference": "8a628b943cf31ca0a002c08af661a95772480225",
+                "url": "https://api.github.com/repos/coreui/coreui/zipball/0ade4fdc917968a6d63883282596dae92b7f84a5",
+                "reference": "0ade4fdc917968a6d63883282596dae92b7f84a5",
                 "shasum": ""
             },
             "replace": {
                 "twitter/bootstrap": "self.version"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3.x-dev"
-                }
-            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -117,7 +112,7 @@
                 }
             ],
             "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-            "homepage": "https://getbootstrap.com",
+            "homepage": "https://getbootstrap.com/",
             "keywords": [
                 "JS",
                 "css",
@@ -130,7 +125,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twbs/bootstrap/issues",
-                "source": "https://github.com/coreui/coreui/tree/v4.0.0"
+                "source": "https://github.com/coreui/coreui/tree/v4.0.0-rc.3"
             },
             "funding": [
                 {
@@ -138,7 +133,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2018-01-18T18:29:48+00:00"
+            "time": "2021-05-26T11:17:12+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -8911,7 +8906,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "coreui/coreui": 5
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
